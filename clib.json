@@ -1,0 +1,22 @@
+{
+  "name": "clib-dev-utility-01",
+  "version": "0.1.0",
+  "dependencies": {
+    "binRick/clib-dev-module-01": "0.1.1",
+    "module": "0.1.1",
+    "ms": "0.0.4"
+  },
+  "repo": "binRick/clib-dev-utility-01",
+  "description": "Test Logger",
+  "license": "MIT",
+  "makefile": "Makefile",
+  "keywords": [],
+  "src": [
+    "src/foo.c",
+    "src/foo-test.c",
+    "include/foo.h"
+  ],
+  "development": {
+    "jwerle/libok": "0.3.1"
+  }
+}
