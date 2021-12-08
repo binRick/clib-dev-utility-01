@@ -1,3 +1,6 @@
 oo
 dist/*
 deps
+*.o
+*.a
+src/foo-test
