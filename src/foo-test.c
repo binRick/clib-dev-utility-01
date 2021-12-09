@@ -37,7 +37,7 @@
 #include "timer/timer.h"
 #include "timer/timer.c"
 
-
+#include "termcolor-c/termcolor-c.h"
 
 
 struct state {
@@ -140,6 +140,14 @@ int main(int argc, char *argv[]) {
 
   printf("Our callback was called %d times\n", state.count);
 
+
+    fputs("Hello, colorful world\n", text_green(stdout));
+    fputs("Hello, colorful world\n", text_underline(stdout));
+    fputs("Hello, colorful world\n", text_bold(stdout));
+    fputs("Hello, colorful world\n", text_dark(stdout));
+    reset_colors(stdout);
+    fputs("Hello, colorful world\n", background_white(text_red(stdout)));
+    reset_colors(stdout);
 
   return foo(bar(0)); 
 }
