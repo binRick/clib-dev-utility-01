@@ -38,6 +38,11 @@
 #include "timer/timer.c"
 
 #include "termcolor-c/termcolor-c.h"
+#define LOG_COLOR (1) // 0: off, 1: on, default: 1
+#define LOG_LEVEL (7) // -1: off, 0~7: different log levels, default: 7
+
+#include "lwlog/lwlog.h"
+
 
 
 struct state {
@@ -148,6 +153,17 @@ int main(int argc, char *argv[]) {
     reset_colors(stdout);
     fputs("Hello, colorful world\n", background_white(text_red(stdout)));
     reset_colors(stdout);
+
+
+
+    lwlog_emerg("This a emerge log.");
+    lwlog_alert("This a alert log.");
+    lwlog_crit("This a crit log.");
+    lwlog_err("This a err log.");
+    lwlog_warning("This a warning log.");
+    lwlog_notice("This a notice log.");
+    lwlog_info("This a info log.");
+    lwlog_debug("This a debug log.");
 
   return foo(bar(0)); 
 }
