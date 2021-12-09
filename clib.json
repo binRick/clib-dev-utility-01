@@ -4,7 +4,12 @@
   "dependencies": {
     "binRick/clib-dev-module-01": "0.1.1",
     "module": "0.1.1",
-    "ms": "0.0.4"
+    "ms": "0.0.4",
+    "timer": "1.0.0",
+    "aperezdc/clog": "0.1.0",
+    "brendanashworth/bench": "0.0.2",
+    "aperezdc/cflag": "1.1.1",
+    "clibs/timer": "1.0.0"
   },
   "repo": "binRick/clib-dev-utility-01",
   "description": "Test Logger",

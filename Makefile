@@ -4,6 +4,7 @@ CFLAGS+=-W -Wall
 CFLAGS+=-O3
 CFLAGS+=-g -ggdb
 CFLAGS+=-I ./deps/clibs/module
+CFLAGS+=-I ./deps
 LDLIBS= -ldl -lm
 LDFLAGS= 
 
@@ -18,7 +19,10 @@ TEST_SUITE=src/foo-test
 
 .DEFAULT_GOAL=all
 .PHONY: all
-all: $(TARGETS)
+all: init $(TARGETS)
+
+init:
+	clib i
 
 SRC_DIR ?= $(patsubst %/,%, $(dir $(abspath $(firstword $(MAKEFILE_LIST)))))
 CFLAGS+=-I$(SRC_DIR)/include
