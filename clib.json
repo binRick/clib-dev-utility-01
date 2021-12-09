@@ -10,7 +10,9 @@
     "brendanashworth/bench": "0.0.2",
     "aperezdc/cflag": "1.1.1",
     "clibs/timer": "1.0.0",
-    "mobiushorizons/closure_module": "0.0.2"
+    "mobiushorizons/closure_module": "0.0.2",
+    "trws/libdefer": "0.0.1",
+    "tylertreat/chan": "0.0.4"
   },
   "repo": "binRick/clib-dev-utility-01",
   "description": "Test Logger",

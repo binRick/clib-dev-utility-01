@@ -1,9 +1,11 @@
-#include "closure/closure.c"
+#include <pthread.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <bar/bar.h>
 #include <foo.h>
 
 #include "ms/ms.h"
+#include "closure/closure.c"
 
 #define LOG_LEVEL   DEBUG
 #include "seethe.h"
@@ -34,7 +36,6 @@
 #include "cflag/cflag.h"
 #include "timer/timer.h"
 #include "timer/timer.c"
-
 
 
 
@@ -94,10 +95,6 @@ void example_measure() {
 }
 
 
-
-
-
-
 int main(int argc, char *argv[]) { 
   (void)argc; 
   (void)argv; 
@@ -142,5 +139,7 @@ int main(int argc, char *argv[]) {
   closure_call(cb, "You Get the picture.");
 
   printf("Our callback was called %d times\n", state.count);
+
+
   return foo(bar(0)); 
 }
