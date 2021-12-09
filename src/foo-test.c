@@ -1,3 +1,4 @@
+#include "closure/closure.c"
 #include <stdio.h>
 #include <bar/bar.h>
 #include <foo.h>
@@ -34,6 +35,29 @@
 #include "timer/timer.h"
 #include "timer/timer.c"
 
+
+
+
+
+struct state {
+  int count;
+};
+
+void * callback(void * ctx, void * arg){
+  if (ctx == NULL) return NULL;
+  struct state * state = (struct state *)ctx;
+  state->count++; // increment invocation counter
+
+  printf("callback has been called %d times, Message was '%s'\n", state->count, (char*) arg);
+  return NULL;
+
+}
+
+
+
+
+
+
 void example_benchmark() {
     BENCHMARK(example_bench, 1)
 
@@ -65,6 +89,7 @@ void example_measure() {
     puts("Normal output");
     cdebug("Some debugging");
     cerror("Some error");
+
 
 }
 
@@ -105,5 +130,17 @@ int main(int argc, char *argv[]) {
   info(msg);
   example_benchmark();
  // example_measure();
+  struct state state = {
+    .count = 0,
+  };
+
+  closure_t cb = closure_new(callback, &state);
+
+  closure_call(cb, "Hello World!!");
+  closure_call(cb, "Lorem");
+  closure_call(cb, "Ipsum ...");
+  closure_call(cb, "You Get the picture.");
+
+  printf("Our callback was called %d times\n", state.count);
   return foo(bar(0)); 
 }

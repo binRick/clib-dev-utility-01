@@ -4,3 +4,4 @@ deps
 *.o
 *.a
 src/foo-test
+*.swp
